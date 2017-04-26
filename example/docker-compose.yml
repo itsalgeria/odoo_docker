@@ -27,10 +27,10 @@ services:
       - "data-db:/var/lib/postgresql/data"
 
   # can be useful for dev when longpolling is required
-  nginx:
-    image: camptocamp/odoo-nginx:9.0
-    depends_on:
-      - odoo
+#  nginx:
+#    image: camptocamp/odoo-nginx:9.0
+#    depends_on:
+#      - odoo
 
 volumes:
   data-odoo:
