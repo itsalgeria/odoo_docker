@@ -13,7 +13,7 @@ services:
       - DB_USER=odoo
       - DB_PASS=odoo
       - DB_NAME=odoodb
-      - ADMIN_PASSWD=# set me
+      - ADMIN_PASSWD=Insidjam2017
       - RUNNING_ENV=dev
       - MARABUNTA_MODE=demo
       - LOG_HANDLER=:WARN
