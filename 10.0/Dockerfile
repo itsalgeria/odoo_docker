@@ -28,6 +28,8 @@ RUN set -x; \
             python-pip \
             xfonts-75dpi \
             xfonts-base \
+            # geo module
+            python-shapely \
             # build packages to clean after the pip install
             build-essential \
             python-dev \
@@ -87,6 +89,13 @@ ENV ODOO_VERSION=10.0 \
     ADDONS_PATH=/opt/odoo/local-src,/opt/odoo/src/addons \
     OPENERP_SERVER=/opt/odoo/etc/odoo.cfg
 
+ENV ADDONS_PATH="/opt/odoo/src/addons, \
+  /opt/odoo/external-src/geospatial" \
+  LIMIT_TIME_CPU=86400 \
+  LIMIT_TIME_REAL=86400 \
+  LIMIT_MEMORY_SOFT=1342177280 \
+  LIMIT_MEMORY_HARD=1610612736
+  
 # set to /opt so we can have the same path outside and inside of the container:
 # docker run --rm odoo pytest odoo/external-src/abc/xyz/tests/test.py
 WORKDIR "/opt"
